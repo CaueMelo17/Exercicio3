@@ -1,0 +1,14 @@
+name: Deploy to Prod
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: Prod
+    steps:
+      - name: Acessando variáveis do ambiente
+        run: |
+          echo "URL is ${{ secrets.URL }}"
+          echo "Senha is ${{ secrets.senha }}"
